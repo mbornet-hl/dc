@@ -1,0 +1,24 @@
+#
+#	Min(x, y)
+#	~~~~~~~~~
+#
+#	@(#)	[MB] ê
+X	Version 1.1 du 25/08/15 - 
+#
+
+[sx sy ly lx ly lx <c s. p]sm
+[r]sc
+
+2 3 lm x
+10 5 lmx
+
+[lfx sx lfx sy lfx ly lfx lx lfx ly lfx lx lfx <c lfx s. lfx p]sa
+[[STACK :]p s. f []p s.]sf
+
+c
+[min(2, 3) :]p s.
+2 3 la x
+
+c
+[]p s. [min(10, 5) :]p s.
+10 5 lax

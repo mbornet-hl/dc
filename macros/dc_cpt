@@ -1,0 +1,29 @@
+#
+#	dc macro to count from 1 to N
+#	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#
+#	@(#)	[MB] fl_dc_cpt	Version 1.2 du 25/09/12 - 
+#
+
+# Usage :
+#	$ dc -f dc_cpt -
+#		N lNx         (where the first N is the number)
+# or :
+#	$ echo "N lNx" | dc -f dc_cpt -
+#
+# Examples :
+#	$ dc -f dc_cpt -
+#	100 lNx
+#	1
+#	2
+#	3
+#	[...]
+#	98
+#	99
+#	100
+#
+#	$ echo '100 lNx' | dc -f dc_cpt -
+#
+
+[0 li x s.]sN
+[r d 3R 1 + p d _4R r 4R !=i Q]si

@@ -1,0 +1,89 @@
+#
+#	@(#)	[MB] œûêW	Version 1.1 du 25/08/15 - 
+#
+
+# Compter de 1 a N :
+# ~~~~~~~~~~~~~~~~~~
+[p 1+ d ln !<i]si
+[sn 1 lix]sc
+
+# Execution :
+# ~~~~~~~~~~~
+10 lcx
+
+# mais la pile n'est pas vide, => ajout du 'sn' final
+[p 1+ d ln !<i]si
+[sn 1 lix sn]sc
+
+# ou en une ligne :
+[sn 1 [p 1+  d ln !<iq]si lix]sc
+
+# variantes :
+# ~~~~~~~~~~~
+# 2 macros definies consecutivement :
+[p 1+ d ln !<i]si [sn 1 lix sn]sc
+
+# une macro 'c' qui definit la macro 'i':
+[sn [p 1+ d ln !<i]si 1 lix sn]sc
+
+# le nombre 1 qui est place sur la pile avant la definition de la macro 'i' :
+[sn 1 [p 1+ d ln !<i]si lix sn]sc
+
+
+# Afficher les puissances 2^i, pour 1 <= i <= N
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[sn 1 [ d si 2r^p s. li 1+ d si li ln !<tq]st ltx s.]sp
+	[  : debute une macro
+		sn : Stocke N dans le registre 'n' et efface
+		1  : valeur de depart de i
+		[  : debute une macro
+			d  : duplique i
+			si : stocke i dans registre 'i' et efface
+			2r : permute 2 et le haut de pile
+			^  : calcule 2^i
+			p  : affiche le haut de pile
+			s. : stocke le haut de pile dans le registre '.' et efface => menage
+			li : rappelle i
+			1+ : calcule i+1
+			d  : duplique i+1
+			si : stocke i+1 et efface
+			ln : rappelle N
+			!< : effectue le test : N >= i+1 ?
+			t  : execute la macro 't' 
+			q  : quitte l'execution de la macro
+		]  : termine la macro
+		st : stocke la macro sous le nom 't' (Temporaire) et efface
+		lt : rappelle la macro 't'
+		x  : execute la macro 't'
+		s. : stocke le haut de pile dans le registre '.' et efface => menage
+	]  : termine la macro
+	sp : stocke la macro sous le nom 'p' (Power) et efface
+
+# Execution :
+# ~~~~~~~~~~~
+10 lp x
+	10 : valeur de N
+	lp : rappelle la macro 'p'
+	x  : execute la macro
+
+
+# Meme chose en affichant i :
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[sn 1 [ d n [ : ] P d si 2r^p s. li 1+ d si li ln !<tq]st ltx s.]sp
+Instructions ajoutees :
+	d  : duplique i
+	n  : affiche le haut de pile sans retour a la ligne, et efface
+	[ : ] : cree la chaine " : "
+	P  : affiche la chaine sans retour a la ligne, et efface
+
+
+# Calculer une factorielle
+# ~~~~~~~~~~~~~~~~~~~~~~~~
+# Avec traces :
+[ [i=]Plip * [PRODUIT=]Pp li 1+ [i+1=]Pp si li lN !<m] sm
+[sN 1 d si lmx]sf  5 lfx p [STACK:]P 10P f
+
+# Sans traces :
+[li * li 1+ si li lN !<m] sm
+[sN 1 d si lmx]sf  5 lfx p
+

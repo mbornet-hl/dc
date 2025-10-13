@@ -1,0 +1,21 @@
+#
+#	@(#)	[MB] fl_dc_or	Version 1.1 du 25/08/15 - 
+#
+
+# Swap
+[r]ss
+
+# Teste si a == 0
+# [lb r lB r 1 =s x s.]se
+[lb r lB r 0 =s x s.]se
+
+# Branche a == 0 : besoin de tester b
+#[[branche a == 0]P 10P]sb
+[s. lT r lF r 1 =s x]sb
+
+# Branche a == 1 : pas besoin de tester b
+# [[branche a == 1]P 10P]sb
+[s. lTx]sB
+
+# Macro OR : "a OU b"
+[r lex]so

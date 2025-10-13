@@ -1,0 +1,14 @@
+#
+#	@(#)	[MB] œûêW	Version 1.1 du 25/08/15 - 
+#
+
+[[TRUE]P]sT
+[[FALSE]P]sF
+
+[[TRUE] p q]sT [[FALSE] p]sF 5 0 >T lFx
+[[TRUE] p q]sT [[FALSE] p]sF 0 5 >T lFx
+
+[[TRUE] p]sT [[FALSE] p]sF 5 0 >T lFx
+[[TRUE] p]sT [[FALSE] p]sF 0 5 >T lFx
+
+

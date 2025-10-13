@@ -1,0 +1,12 @@
+#
+# Necessite de charger la macro de calcul d'une factorielle
+# Exemple :
+#	$ dc -f dc_factorielle -f dc_e_computation -
+#	167 lEx
+#
+
+# Macro de calcul des decimales de e
+[300 k 0 r 0 lix s. s. p] sE
+
+# Macro d'iteration pour le calcul des decimales de e
+[d l!x 1 r / 4R + _3R 1 + lYx !=i] si

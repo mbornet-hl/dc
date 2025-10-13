@@ -1,0 +1,9 @@
+#
+#	@(#)	[MB] fl_dc_bool	Version 1.1 du 25/08/15 - 
+#
+
+# Macro T : affiche "TRUE"
+[[TRUE]P 10P]sT
+
+# Macro F : affiche "FALSE"
+[[FALSE]P 10P]sF

@@ -1,0 +1,23 @@
+#
+#	@(#)	[MB] fl_dc_xor	Version 1.1 du 25/08/15 - 
+#
+
+# Macro XOR
+# =========
+
+# Utilise la commande Q pour sauter des niveaux :
+# dans le manuel de UNIX v7, chapitre "dc" :
+# "If q is capitalized, the top value on the stack is popped
+#  and the string execution level is popped by that value."
+
+# Macro t : affiche "TRUE" et termine
+# - lT   : rappelle la macro T (TRUE),
+# - x    : execute la macro au sommet de la pile,
+# - 2Q   : saute les deux derniers niveaux de retour.
+[lT x 2Q]st
+
+# Macro X : teste si A est different de b
+[!=t lF lF x]sX
+# - !=x  : teste si A != B : si oui => execute la macro t,
+# - lF   : rappelle la macro F (FALSE),
+# - x    : execute la macro au sommet de la pile,

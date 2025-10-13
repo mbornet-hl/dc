@@ -1,0 +1,8 @@
+#
+#	@(#)	[MB] œûêW	Version 1.1 du 25/08/15 - 
+#
+
+[sn 1 [p 1+ d ln !<i]si lix]sc
+[p 1+ d ln !<i]si [sn 1 lix sn]sc
+[sn [p 1+ d ln !<i]si 1 lix sn]sc
+[sn 1 [p 1+ d ln !<i]si lix sn]sc

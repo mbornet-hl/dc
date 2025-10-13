@@ -1,0 +1,30 @@
+#
+#	%Z%	[%Y%] %M%	Version %I% du %E% - %Q%
+#
+
+# Macro f : Print stack
+[[STACK :]P 10P f 10P]sf
+
+# Message + affichage stack
+[P [ : ]P 10P lfx]sD
+
+# Macro de duplication de X et Y
+[d 3R d _4R r]sY
+
+# Macro d'iteration pour le calcul de N!
+[d 4R *  _3R 1 + lYx !>P] sP
+
+# Macro de calcul de N!
+[1 r 1 lPx s. s.] s!
+
+# Calcul de e
+10k
+
+# [[Macro i]lDx d l!x [Apres factorielle]lDx 1 r / [Apres Sigma k]lDx 3R d _4R + d _4R r 1 + 4R 4R [Avant test]lDx !=i [Apres calcul]lDx [Avant Q]lDx Q] si
+[d l!x 1 r / 3R d _4R + d _4R r 1 + 4R 4R !=i Q] si
+
+# Macro de calcul de e
+[0 0 lix p]sE
+
+# Calcul de e avec une extension de precision specifiee en X
+[K d sk + k lEx lk k 1 / p]sC

@@ -1,0 +1,21 @@
+#
+#	Macro pour le calcul du PGCD de deux nombres
+#	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#
+#	@(#)	[MB] fl_dc_pgcd	Version 1.2 du 25/09/12 - 
+#
+
+# Calcul de PGCD(x, y)
+
+[Valeur de x ? ] P ? sx
+[Valeur de y ? ] P ? sy
+
+lx ly
+
+# registre r : reste de la division precedente
+# registre m : macro pour effectuer la fonction "modulo"
+# La valeur du PGCD reste sur la pile
+[d sr r lr % d 0<m] d sm x + [PGCD(]P lx n [, ]P ly n [): ]P p
+
+# 10P [STACK :]P 10P
+# f

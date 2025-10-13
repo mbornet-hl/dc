@@ -1,0 +1,8 @@
+# Macro de calcul de N!
+[1 r 1 lPx s. s.] s!
+
+# Macro de duplication de X et Y
+[d 3R d _4R r]sY
+
+# Macro d'iteration pour le calcul de N!
+[d 4R *  _3R 1 + lYx !>P] sP

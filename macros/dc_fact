@@ -1,0 +1,27 @@
+#
+#	@(#)	[MB] fl_dc_fact	Version 1.4 du 25/08/17 - 
+#
+
+# Calcul de factorielle en progressant dans l'ordre ascendant
+[ [i=]Plip * [PRODUIT=]Pp li 1+ [i+1=]Pp si li lN !<m] sm
+[sN 1 d si lmx]sf
+# 5 lfx [STACK:]P 10P f
+
+[li * li 1+ si li lN !<M] sM
+[sN 1 d si lMx]sF
+# 5 lFx p
+
+
+# Nouvelle version (MB) :
+[d _3R * r 1 - d 0 !=*]s*
+[1 r l*x s.]s!
+
+# Arrangement
+[r d l!x _3R r - l!x /]sA
+
+
+# Combinaison
+[d l!x _3R lAx r /]sC
+
+# Factorielle 10 :
+# 10 l!xp

@@ -1,0 +1,29 @@
+#
+#	Macros pour Min(x, y) et Max(x, y)
+#	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#
+#	@(#)	[MB] fl_dc_min_max	Version 1.3 du 25/09/12 - 
+#
+
+# Macro r : swap X and Y:  x<>y
+[r]sr
+
+# Macro m : Min(X, Y) : version using registers
+# [sx sy ly lx ly lx <r s.]sm
+
+# Macro m : Min(X, Y) : version not using registers, stack only
+# (see macro 'd' in dc_stack to duplicate X and Y)
+[d 3R d _4R r <r s.]sm
+
+# Macro < : Min(X, Y) : version with trace
+[d 3R d 4R [min(]P n [, ]P n [) : ]P lmx p]s<
+
+# Macro M : Max(X, Y) : version using registers
+# [sx sy ly lx ly lx >r s. p]sM
+
+# Macro M : Max(X, Y) : version not using registers, stack only
+# (see macro 'd' in dc_stack to duplicate X and Y)
+[d 3R d _4R r >r s.]sM
+
+# Macro > : Max(X, Y) : version with trace
+[d 3R d 4R [max(]P n [, ]P n [) : ]P lMx p]s>

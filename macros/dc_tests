@@ -1,0 +1,72 @@
+#
+#	@(#)	[MB] fl_dc_tests	Version 1.2 du 25/09/12 - 
+#
+
+# Re : macro for equal test
+#[lT r lF r 1 =s x s.]se
+[sx sy lT lF ly lx =s x s.]se
+
+# Rs : macro for swap
+[r]ss
+
+# 12 24 lex
+# FALSE
+# f
+#
+# 12 12 lex
+# TRUE
+# 
+# 
+
+# x < y ?
+[sx sy lT lF ly lx <s  x s.]sL
+
+# x <= y ?
+[sx sy lT lF ly lx !>s x s.]sl
+
+# x > y ?
+[sx sy lT lF ly lx >s  x s.]sG
+
+# x >= y ?
+[sx sy lT lF ly lx !<s x s.]sg
+
+# Exemples :
+# 2 2 lLx		# 2 < 2 ?
+# FALSE
+# 
+# 3 2 lLx		# 2 < 3 ?
+# TRUE
+# 
+# 2 3 lLx		# 3 < 2 ?
+# FALSE
+# 
+# 
+# 2 2 llx		# 2 <= 2 ?
+# TRUE
+# 
+# 3 2 llx		# 2 <= 3 ?
+# TRUE
+# 
+# 2 3 llx		# 3 <= 2 ?
+# FALSE
+# 
+# 
+# 2 2 lGx		# 2 > 2 ?
+# FALSE
+# 
+# 3 2 lGx		# 2 > 3 ?
+# FALSE
+# 
+# 2 3 lGx		# 3 > 2 ?
+# TRUE
+# 
+# 
+# 2 2 lgx		# 2 >= 2 ?
+# TRUE
+# 
+# 3 2 lgx		# 2 >= 3 ?
+# FALSE
+# 
+# 2 3 lgx		# 3 >= 2 ?
+# TRUE
+# 

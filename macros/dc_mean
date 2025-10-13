@@ -1,0 +1,7 @@
+#!/bin/bash
+#
+#	@(#)	[MB] fl_dc_mean	Version 1.1 du 25/08/15 - 
+#
+
+# sed '1s/$/1sn/;2,$s/$/+ln1+sn/;$s/$/ln\/p/'
+sed '1s/$/ 10 k 1 sn/;2,$s/$/ + ln 1 + sn/;$s/$/ ln \/ p/'

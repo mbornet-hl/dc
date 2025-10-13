@@ -1,0 +1,26 @@
+#
+#	@(#)	[MB] fl_dc_stack	Version 1.3 du 25/08/31 - 
+#
+
+# Macro f : Print stack
+[[STACK :]P 10P f 10P]sf
+
+# Macro r : Roll down
+[_1z*Rlfx]sr
+
+# Macro R : Roll up
+[zRlfx]sR
+
+# Macro F : Fill stack with X, Y, Z and T
+[[T][Z][Y][X] lfx]sF
+
+# Macro d : Duplicate X and Y so that :
+#
+#	| X		| X
+#	| Y	=> 	| Y
+#	| .		| X
+#	| .		| Y
+#	| 		| .
+#	| 		| .
+#
+[d 3R d _4R r]sY

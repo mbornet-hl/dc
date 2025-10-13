@@ -1,0 +1,23 @@
+#
+#	Tests des tests de "dc"
+#	~~~~~~~~~~~~~~~~~~~~~~~
+#
+#	@(#)	[MB] fl_dc_t	Version 1.1 du 25/08/15 - 
+#
+
+# Swap
+[r]ss
+
+# Equal
+# [lb r lB r 1 =s x s.]se
+[lb r lB r 1 =s x]se
+
+# Teste b
+#[[teste b]P 10P]sb
+# [lT r lF r 1 =s x s.]sb
+[s. lT r lF r 1 =s x]sb
+
+# Ne teste pas b : FALSE
+[s. lFx]sB
+
+[r lex]sa

@@ -1,0 +1,80 @@
+#
+#	@(#)	[MB] fl_dc_and	Version 1.1 du 25/08/15 - 
+#
+
+# Macro AND
+# =========
+
+# 1ere version :
+# ~~~~~~~~~~~~~~
+# Principe :
+# placer les traitements a effectuer sur B selon la valeur de A dans deux macros,
+# et executer soit une macro, soit l'autre.
+# => une macro pour la branche OUI, une macro pour la branche NON,
+# => une macro pour afficher TRUE, une macro pour afficher FALSE.
+
+# Macro s : swap de X et Y (X<>Y)
+[r]ss
+
+# Macro b : branche A == 1 (OUI) : besoin de tester B
+# - s.   : purge X (=> dans R.),
+# - lT   : rappelle la macro T (TRUE),
+# - r    : permute X et Y => B en sommet de pile,
+# - lF   : rappelle la macro F (FALSE),
+# - r    : permute X et Y => B en sommet de pile,
+# - 1 =s : teste si B == 1 : si oui => execute la macro s (X<>Y),
+# - x    : execute la macro au sommet de la pile.
+[s. lT r lF r 1 =s x]sb
+
+# Macro B : branche A == 0 (NON), pas besoin de tester B
+# - s.   : purge X (=> dans R.),
+# - lF   : rappelle la macro F (FALSE),
+# - x    : execute la macro au sommet de la pile,
+[s. lF x]sB
+
+# Macro a (AND) : "A ET B" (A dans Y, B dans X)
+# Rappelle les macros b et B, teste si A == 1 : si oui => swappe b et B, puis execute la
+# macro au sommet de pile
+# - r    : permute X et Y => A en sommet de pile,
+# - lb   : rappelle la macro b,
+# - r    : permute X et Y => A en sommet de pile,
+# - lB   : rappelle la macro B,
+# - r    : permute X et Y => A en sommet de pile,
+# - 1 =s : teste si A == 1 : si oui => execute la macro s (X<>Y),
+# - x    : execute la macro au sommet de la pile,
+# - s.   : purge X (=> dans R.),
+# - f    : affiche la pile.
+[r lb r lB r 1 =s x s. f]sa
+
+
+
+# ============================================
+
+# 2eme version :
+# ~~~~~~~~~~~~~~
+# Utilise la commande Q pour sauter des niveaux :
+# dans le manuel de UNIX v7, chapitre "dc" :
+# "If q is capitalized, the top value on the stack is popped
+#  and the string execution level is popped by that value."
+
+# Macro T : affiche "TRUE"
+# - lT   : rappelle la macro T (TRUE),
+# - x    : execute la macro au sommet de la pile,
+# - 3Q   : saute les trois derniers niveaux de retour.
+[lT x 3Q]st
+
+# Macro x : teste si B == 1 => si oui, affiche TRUE, sinon affiche FALSE
+# - 1 =t : teste si A == 1 : si oui => execute la macro t,
+# - lF   : rappelle la macro F (FALSE),
+# - x    : execute la macro au sommet de la pile,
+# - f    : affiche la pile,
+# - 2Q   : saute les deux derniers niveaux de retour.
+[1 =t lF x f 2Q]sx
+
+# Macro A : teste si A == 1 =>si oui, execute la macro x, sinon purge B et affiche FALSE
+# - r    : permute X et Y => A en sommet de pile,
+# - 1 =x : teste si A == 1 : si oui => execute la macro x,
+# - s.   : purge X (=> dans R.),
+# - lF   : rappelle la macro F (FALSE),
+# - x    : execute la macro au sommet de la pile,
+[r 1 =x s. lF x]sA

@@ -1,0 +1,11 @@
+#
+#	@(#)	[MB] fl_dc_e	Version 1.2 du 25/08/15 - 
+#
+
+50 k
+
+[li * li 1+ si li lN !<m] sm
+[sN 1 d si lmx]sf  5 lfx
+
+[lj [j=]Pp lfx [fact=]Pp 1 r / [1/fact=]Pp lt [t=]Pp + [new_t=]Pp st lj 1 + sj lj lE !<e] se
+[sE 1 st 1 sj lex] sE 30 lEx

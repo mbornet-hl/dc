@@ -1,0 +1,62 @@
+#
+#	@(#)	[MB] fl_dc_notes.txt	Version 1.1 du 25/08/15 - 
+#
+
+Article GLMF sur dc :
+	=> ajouter paragraphe "Historique"
+
+	=> paragraphe pour AND, OR et XOR
+	   Les codes qui figurent dans ce paragraphe sont donnes uniquement pour des raisons
+	   pedagogique. Leur complexite par rapport aux autres langages disponibles sous Linux 
+	   montrent clairement que dc n'est pas un langage de programmation mais juste un calculateur
+	   dote de quelques fonctionnalites utilisables dans des cas relativement simples, tels que
+	   des iterations pour calculer des series, par exemple, mais pas pour creer des programmes compliques.
+
+Q: En quel langage a ete ecrit la premiere version de dc ? 
+R: "dc" a ete ecrit en assembleur PDP-11
+   => sources disponible dans les sources de UNIX v6 dans repertoire :
+      src/cmd/dc[1-5]*.s
+   "dc" est la premiere commande a avoir ete testee sur Unix
+   => citer les sources (livre de Kernighan, p. xxx)
+   => donner des extraits du code assembleur (/home/machine/mb/tests/dc/unix-jun72/src/cmd/dc*.s)
+
+   dc a ete ecrit en assembleur a une periore ou les contraintes lies a la RAM et a la puissance CPU
+   etaient tres fortes (24Ko pour la machine, 16Ko pour le systeme, 8 Ko pour le reste)
+   => retrouver la reference exacte dans le livre de Kernighan
+   => voir extraits du PDF (PC Smile ?) => faire une citation
+
+Q : Comment faire un equivalent de : cmd && echo "OK" || echo "KO"
+
+
+Creer une mecanique pour executer une macro :
+	- si A && B  (AND)
+	- si A || B  (OR)
+	- si A et !B (XOR)
+
+Creer une mecanique pour executer :
+	- macro V si condition == VRAI
+	- macro F si condition == FAUX
+
+Q: comment executer une macro dont un connait le nom ?
+R: si la macro est stockee dans Ra:
+	lax
+	=> pour executer une macro b :
+	  stocker [lbx] dans a
+
+	  Exemple :
+	  ~~~~~~~
+	  [[TOTO]P 10P]sb
+	  [lbx]sa
+	  lax
+	  TOTO
+
+Instruction "Q" : decrite dans la doc de dc dans manuel de UNIX v7 :
+	"if q is capitalized, ..."
+
+Decrire fonctionnement de la macro permettant de calculer une factorielle.
+
+Tests, macros de tests :
+	=> macros de tests + exemples dans dc_tests
+	=> dc -f dc_bool -f dc_tests -
+
+Utiliser la VM BSD pour visualiser les commandes "dc" generees par "bc".

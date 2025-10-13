@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+#	@(#)	[MB] œûêW	Version 1.1 du 25/08/15 - 
+#
+
+i=1
+cat "$1" | while read line
+do
+	echo "Macro [$i]: '$line'" | hl -e -1B 'Macro[^:]*:' -3Y "'"'(.*)'"'"
+	cat <<- EOF | dc | hl -3C 'STACK'
+		$line
+		4 lcx
+		[STACK]P10P
+
+		f
+	EOF
+	echo '--------------------'
+	i=$((i + 1))
+done

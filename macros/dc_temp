@@ -1,0 +1,12 @@
+#
+#	Conversion de temperatures Farenheit <==> Celcius
+#	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#
+#	@(#)	[MB] fl_dc_temp	Version 1.1 du 25/08/15 - 
+#
+
+# °F => °C
+[2k 32 - 5 * 9 / p]sC
+
+# °C => °F
+[2k 9 * 5 / 32 + p]sF

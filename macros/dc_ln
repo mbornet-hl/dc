@@ -1,0 +1,10 @@
+#
+#	Logarithme neperien, formule de Newton
+#	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#
+#
+#
+#	y(n+1) = y(n) + 2 ((x - e^y(n))/(x + e^y(n)))
+#
+
+[

@@ -1,0 +1,47 @@
+#
+#	@(#)	[MB] ›ûêW	Version 1.1 du 25/08/15 - 
+#
+
+# Conversion de secondes en HH:MM:SS : resultat dans la pile
+[ss ls 60 ~ sS 60 ~ sM 24 ~ sH sD lS lM lH lD ls f]sh
+86399 lhx
+10P
+
+# Conversion de secondes en HH:MM:SS : Affichage en clair
+[ss ls 60 ~ sS 60 ~ sM 24 ~ sH sD ls n [ s = ]P lD n [ day(s) ]P lH n [:]P lM n [:]P lS n 10P]sj
+
+86399 ljx
+10P
+
+# Affichage ameliore : pas d'affichage des jours si D = 0, ajout d'un 's' apres 'day' si D > 1
+# Si D != 0 : affichage du nombre de jours
+# Si D >  1 : affichage d'un 's' apres 'day'
+
+# Affiche le nombre de jours si D != 0
+[lD 0 !=d]sx
+
+# Affiche le nombre de jours
+[lD n [ day]P lyx [ ]P]sd
+
+# Execute la macro 'z' si 1 < D
+[lD 1 <z]sy
+
+# Affiche un 's'
+[[s]P]sz
+
+[ss ls 60 ~ sS 60 ~ sM 24 ~ sH sD ls n [ s = ]P lxx lH n [:]P lM n [:]P lS n 10P]sJ
+
+86399   lJx
+123456  lJx
+1234567 lJx
+10P
+
+# Affichage des nombres sur 2 chiffres
+[d 10 >0 n]s_
+[0 n]s0
+
+[ss ls 60 ~ sS 60 ~ sM 24 ~ sH sD ls n [ s = ]P lxx lH l_x [:]P lM l_x [:]P lS l_x 10P]sK
+
+86399   lKx
+123456  lKx
+1234567 lKx

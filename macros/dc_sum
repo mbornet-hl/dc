@@ -1,0 +1,8 @@
+#!/bin/bash
+#
+#	@(#)	[MB] fl_dc_sum	Version 1.1 du 25/08/15 - 
+#
+
+# for i in {1..10}; do echo "$i"; done | sed '2,$s/$/+/;$s/$/p/' | dc
+
+sed '2,$s/$/+/;$s/$/p/' | dc
