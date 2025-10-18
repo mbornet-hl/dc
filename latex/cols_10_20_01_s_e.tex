@@ -1,0 +1,53 @@
+\documentclass[a4paper]{article}
+\usepackage[landscape, margin=1cm]{geometry}
+\usepackage{array}
+\usepackage[table]{xcolor}
+
+\begin{document}
+\newcommand{\rb}[1]{\textcolor{red}{\textbf{#1}}}
+\newcommand{\bb}[1]{\textcolor{blue}{\textbf{#1}}}
+
+\renewcommand{\arraystretch}{0.1}
+
+\noindent
+\begin{tabular}{|p{0.15cm}|p{0.10cm} p{0.10cm}|p{0.10cm} p{0.10cm}|p{0.10cm} p{0.10cm}|p{0.10cm} p{0.10cm}||p{0.10cm} p{0.10cm}|p{0.10cm} p{0.10cm}|p{0.10cm} p{0.10cm}|p{0.10cm} p{0.10cm}|p{0.10cm} p{0.10cm}|p{0.10cm} p{0.10cm}|p{0.10cm} p{0.10cm}|p{0.10cm} p{0.10cm}|p{0.10cm} p{0.10cm}|p{0.10cm} p{0.10cm}|p{0.10cm} p{0.10cm}|p{0.10cm} p{0.10cm}|p{0.05cm}|}
+\hline
+ & \rb{0} & & \rb{r}  & & \rb{0}  & & \bb{li x}  & &  \rb{d} & & \bb{l! x}  & & \rb{1}  & & \rb{r}  & & \rb{/} & & \rb{4R}  & & \rb{+}  & & \rb{\_3R}  & & \rb{1}  & & \rb{+}  & & \bb{lY x}  & & \bb{!= i} & &   \\
+\hline
+\end{tabular} \\
+\begin{tabular}{|m{0.10cm} m{0.10cm}|m{0.10cm} m{0.10cm}|m{0.10cm} m{0.10cm}|m{0.10cm} m{0.10cm}||m{0.10cm} m{0.10cm}|m{0.10cm} m{0.10cm}|m{0.10cm} m{0.10cm}|m{0.10cm} m{0.10cm}|m{0.10cm} m{0.10cm}|m{0.10cm} m{0.10cm}|m{0.10cm} m{0.10cm}|m{0.10cm} m{0.10cm}|m{0.10cm} m{0.10cm}|m{0.10cm} m{0.10cm}|m{0.10cm} m{0.10cm}|m{0.10cm} m{0.10cm}|m{0.10cm} m{0.10cm}|}
+N & & \[ 0 (\Sigma) \]  & & N  & & 0(k)  & & k  & & k  & & k!  & & 1  & & k!  & &  \[ \frac{1}{k!} \] & & \[ \sum_{i=0}^{k-1} \frac{1}{i!} \]  & & \[ \sum_{i=0}^{k} \frac{1}{i!} \]  & & k  & & 1  & & k+1  & & k+1  & & k+1   & \\
+\hline
+ & & N  & & \[ 0(\Sigma) \]  & &  N  & & N  & & k  & & k   & & k!  & & 1  & & k  & & \[ \frac{1}{k!} \] & & k  & & N  & & k  & & N  & & N  & & N   & \\
+\hline
+ & &   & &   & & \[ 0(\Sigma) \]  & & \[ \sum_{i=0}^{k-1} \frac{1}{i!} \]  & &  N & & N  & & k  & & k  & & N  & & k  & & N  & &  \[ \sum_{i=0}^{k} \frac{1}{i!} \] & & N  & & \[ \sum_{i=0}^{k} \frac{1}{i!} \]  & & k+1  & & \[ \sum_{i=0}^{k} \frac{1}{i!} \]   & \\
+\hline
+ & &   & &   & &   & &   & &  \[ \sum_{i=0}^{k-1} \frac{1}{i!} \]  & & \[ \sum_{i=0}^{k-1} \frac{1}{i!} \]  & &  N & & N  & & \[ \sum_{i=0}^{k-1} \frac{1}{i!} \]  & & N  & &   & &   & & \[ \sum_{i=0}^{k} \frac{1}{i!} \]  & &   & & N & &   & \\
+\hline
+ & &   & &   & &   & &   & &   & &   & & \[ \sum_{i=0}^{k-1} \frac{1}{i!} \]  & & \[ \sum_{i=0}^{k-1} \frac{1}{i!} \]  & &   & &   & &   & &   & &   & &   & & \[ \sum_{i=0}^{k} \frac{1}{i!} \]  & &   & \\
+\hline
+% & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & \\
+% \hline
+% & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & \\
+% \hline
+% & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & \\
+% \hline
+% & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & \\
+% \hline
+% & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & &   & \\
+% \hline
+% \hline
+\end{tabular}
+
+\noindent
+
+\[ A_n^p = \frac{n!}{(n - p)!} \]
+
+\[ C_n^p = \frac{n!}{p!(n - p)!} \]
+
+\[ N = \sum_{i=0}^{l-1} c_i . 256^i \]
+
+\[ e = \sum_{n=0}^{\infty} \frac{1}{n!} \]
+
+
+\end{document}
