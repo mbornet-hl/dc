@@ -1,0 +1,10 @@
+#!/bin/bash
+
+for a in 0 1
+do
+	for b in 0 1
+	do
+		echo -n "$a $b "
+		echo "$a $b lox" | dc -f dc_bool -f dc_or -
+	done
+done | hl --bool_before
