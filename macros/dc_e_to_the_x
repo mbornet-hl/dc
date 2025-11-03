@@ -1,0 +1,31 @@
+#
+#	Exponential
+#	~~~~~~~~~~~
+#
+#	@(#)	[MB] ¿Æ:b	Version 1.2 du 25/11/03 - 
+#
+
+30k
+
+# Macro de calcul de N!
+[1 r 1 lPx s. s.] s!
+
+# Macro de duplication de X et Y
+[d 3R d _4R r] sY
+
+# Macro d'iteration pour le calcul de N!
+[d 4R *  _3R 1 + lYx !>P] sP
+
+# Macro d'iteration pour le calcul de e^x
+# version non optimisee calculant x^k et k! a chaque iteration
+[d l!x r d 1 + r 5R d _6R r ^ 3R / 3R d _4R + d _4R 3R !=I 1 - Q] sI
+
+# Macro de calcul de e^x
+[1 1 lIx r s.] sE
+
+# Macro d'iteration optimisee pour le calcul de e^x
+# pas d'utilisation de ^ ni de la macro factorielle
+[r 4R d _5R * r d 1 + _4R / d 3R d _5R + d _5R r _4R r _3R !=i 1 - Q] si
+
+# Macro de calcul de e^x
+[1 1 1 lix s. r s.] se
