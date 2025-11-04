@@ -1,0 +1,14 @@
+#
+#	Calcul du logarithme neperien
+#	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#
+#	@(#)	[MB] fl_dc_Log	Version 1.1 du 25/11/04 - 
+#
+
+30k
+
+# Macro d'iteration
+[4R d _5R d * 3R * d _3R r d 2 * 1 + r 1 + _3R / 4R d 3R + d _5R !=i 1 - Q] si
+
+# Macro d'initialisation
+[d 1 - r 1 + / d d 1 lix s. r s. 2 *] sL
