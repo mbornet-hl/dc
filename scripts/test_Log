@@ -1,0 +1,27 @@
+#!/bin/bash
+#
+#	@(#)	[MB] fl_test_Log	Version 1.1 du 25/11/07 - 
+#
+
+gen_plot()
+{
+	precision="$1"
+
+	echo "Precision = $precision"
+	for i in {50..599}
+	do
+		echo "2k $i 100 / $precision k lLx" | dc -f fl_dc_Log -f -
+	done > iterations_${precision}.txt
+
+	cat <<- EOF | gnuplot
+		set terminal pngcairo size 1920,1080
+		set output "iterations_${precision}.png"
+		set title "Nombre d'iterations pour le calcul de Log(x) avec ${precision} decimales"
+		plot "iterations_${precision}.txt" using 1:2 with linespoints title "Nombre d'itérations"
+	EOF
+}
+
+for p in 10 20 30 50 100 200 500 1000 2000 5000 10000
+do
+	gen_plot "$p"
+done
