@@ -1,0 +1,24 @@
+#
+#	Calcul du logarithme neperien
+#	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#
+#	%Z%	[%Y%] %M%	Version %I% du %E% - %Q%
+#
+#	Version 3 : optimisation : pas de calcul de t^2 dans l'iteration
+#
+
+30k
+
+# Macro d'iteration
+[4R d _5R 4R * d 3R d 2 + _3R / 4R d _3R + d _4R !=i 3 - 2 / Q] si
+
+# Macro d'initialisation
+[d 1 - r 1 + / d d d * _3R 3 lix 2 * _3R s. s.] sL
+
+# Macros avec comptage du nombre d'iterations
+
+# Macro d'iteration
+[4R d _5R 4R * d 3R d 1 + r 2 * 1 + 3R r / 4R d _4R + d 4R r _4R !=I 1 - p Q] sI
+
+# Macro d'initialisation
+[d 1 - r 1 + / d d d * _3R 1 lIx 2 * _3R s. s.] sD
