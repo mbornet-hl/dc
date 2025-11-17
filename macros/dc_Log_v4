@@ -1,0 +1,23 @@
+#
+#	Calcul du logarithme neperien
+#	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#
+#	@(#)	[MB] fl_dc_Log_v4	Version 1.1 du 25/11/17 - 
+#
+#	Version 4 : division par 2^n
+#
+
+# Macro d'iteration
+[4R d _5R 4R * d 3R d 2 + _3R / 4R d _3R + d _4R !=i 3 - 2 / Q] si
+
+# Macro d'initialisation
+[K K 5 + k r d 1 - r 1 + / d d d * _3R 3 lix 2 * _3R s. s. r k 1 /] sN
+
+# Calcul de Log(2)
+2 lNx s2
+
+# Macro de reduction par 2^n
+[2 / r 1 + r d 1 <j] sj
+
+# Macro de calcul de Log(x) avec reduction par 2^n
+[K K 5 + k r d 0 _3R 1 <j lNx r l2 * + r k 1 /]sL
