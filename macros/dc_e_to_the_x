@@ -2,10 +2,8 @@
 #	Exponential
 #	~~~~~~~~~~~
 #
-#	@(#)	[MB] ¿Æ:b	Version 1.2 du 25/11/03 - 
+#	@(#)	[MB] YÓiY	Version 1.3 du 25/11/17 - 
 #
-
-30k
 
 # Macro de calcul de N!
 [1 r 1 lPx s. s.] s!
